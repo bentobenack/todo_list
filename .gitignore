@@ -1,3 +1,8 @@
 
 __pycache__/
 env/
+
+
+src/api/v1/static/images/*
+src/api/v1/static/videos/*
+src/api/v1/static/documents/*
