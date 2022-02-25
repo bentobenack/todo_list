@@ -1,17 +1,26 @@
-from flask import Blueprint
-
-auth = Blueprint('auth', __name__, url_prefix='/auth')
-
-@auth.route('/signup', methods=['POST'])
-def signup():
-    return "hello Auth"
+from flask_restx import Resource
+from .import auth
 
 
-@auth.route('/login', methods=['POST'])
-def login():
-    return "hello Auth"
+@auth.route('/signup')
+class Signup(Resource):
+    @auth.doc('signup')
+    def post(self):
+        '''Signup in the app'''
+        return "Signup"
+    
+    
+@auth.route('/login')
+class Login(Resource):
+    @auth.doc('login')
+    def post(self):
+        '''Login in the app'''
+        return "Login"
+    
 
-
-@auth.route('/refresh', methods=['POST'])
-def refres_token():
-    return {"token": "Token"}
+@auth.route('/refresh')
+class RefreshToken(Resource):
+    @auth.doc('refresh_token')
+    def post(self):
+        '''Refresh Token'''
+        return "Refresh Token"
