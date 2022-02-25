@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from flask_restx import Api, Resource
+from flask_restx import Api
 from .api.v1.users.routes.user_routes import user
 from .api.v1.auth.routes.auth_routes import auth
 from .api.v1.todos.routes.todo_routes import todo
